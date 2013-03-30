@@ -169,6 +169,7 @@
 		B6473AB3170752CF0064B93B /* jumpUp-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = B6473A8F170752CF0064B93B /* jumpUp-hd.png */; };
 		B6473AB4170752CF0064B93B /* jumpUp.png in Resources */ = {isa = PBXBuildFile; fileRef = B6473A90170752CF0064B93B /* jumpUp.png */; };
 		B6473AB5170752CF0064B93B /* sv_anim_1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6473A91170752CF0064B93B /* sv_anim_1.png */; };
+		B6473AB9170768160064B93B /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6473AB8170768160064B93B /* BackgroundLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -480,6 +481,8 @@
 		B6473A8F170752CF0064B93B /* jumpUp-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jumpUp-hd.png"; sourceTree = "<group>"; };
 		B6473A90170752CF0064B93B /* jumpUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumpUp.png; sourceTree = "<group>"; };
 		B6473A91170752CF0064B93B /* sv_anim_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sv_anim_1.png; sourceTree = "<group>"; };
+		B6473AB7170768160064B93B /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundLayer.h; path = Classes/BackgroundLayer.h; sourceTree = "<group>"; };
+		B6473AB8170768160064B93B /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundLayer.m; path = Classes/BackgroundLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -538,6 +541,7 @@
 		B64738C917074CC90064B93B /* SpaceViking */ = {
 			isa = PBXGroup;
 			children = (
+				B6473AB6170767890064B93B /* Classes */,
 				B6473A5717074CCF0064B93B /* AppDelegate.h */,
 				B6473A5817074CCF0064B93B /* AppDelegate.m */,
 				B6473A5A17074CCF0064B93B /* HelloWorldLayer.h */,
@@ -1033,6 +1037,16 @@
 			path = Joystick;
 			sourceTree = "<group>";
 		};
+		B6473AB6170767890064B93B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B6473AB7170768160064B93B /* BackgroundLayer.h */,
+				B6473AB8170768160064B93B /* BackgroundLayer.m */,
+			);
+			name = Classes;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1247,6 +1261,7 @@
 				B6473A5917074CCF0064B93B /* AppDelegate.m in Sources */,
 				B6473A5C17074CCF0064B93B /* HelloWorldLayer.m in Sources */,
 				B6473A5F17074CCF0064B93B /* IntroLayer.m in Sources */,
+				B6473AB9170768160064B93B /* BackgroundLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
