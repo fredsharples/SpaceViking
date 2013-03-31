@@ -169,6 +169,7 @@
 		B6473AB5170752CF0064B93B /* sv_anim_1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6473A91170752CF0064B93B /* sv_anim_1.png */; };
 		B6473AB9170768160064B93B /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6473AB8170768160064B93B /* BackgroundLayer.m */; };
 		B6473ABC170786460064B93B /* GameplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B6473ABB170786460064B93B /* GameplayLayer.m */; };
+		B6473ABF1707BE650064B93B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B6473ABE1707BE650064B93B /* GameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -482,6 +483,8 @@
 		B6473AB8170768160064B93B /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundLayer.m; path = Classes/BackgroundLayer.m; sourceTree = "<group>"; };
 		B6473ABA170786460064B93B /* GameplayLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameplayLayer.h; path = Classes/GameplayLayer.h; sourceTree = "<group>"; };
 		B6473ABB170786460064B93B /* GameplayLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameplayLayer.m; path = Classes/GameplayLayer.m; sourceTree = "<group>"; };
+		B6473ABD1707BE650064B93B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Classes/GameScene.h; sourceTree = "<group>"; };
+		B6473ABE1707BE650064B93B /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Classes/GameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1041,6 +1044,8 @@
 				B6473AB8170768160064B93B /* BackgroundLayer.m */,
 				B6473ABA170786460064B93B /* GameplayLayer.h */,
 				B6473ABB170786460064B93B /* GameplayLayer.m */,
+				B6473ABD1707BE650064B93B /* GameScene.h */,
+				B6473ABE1707BE650064B93B /* GameScene.m */,
 			);
 			name = Classes;
 			path = ..;
@@ -1260,6 +1265,7 @@
 				B6473A5F17074CCF0064B93B /* IntroLayer.m in Sources */,
 				B6473AB9170768160064B93B /* BackgroundLayer.m in Sources */,
 				B6473ABC170786460064B93B /* GameplayLayer.m in Sources */,
+				B6473ABF1707BE650064B93B /* GameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
