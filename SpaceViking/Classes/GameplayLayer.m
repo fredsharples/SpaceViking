@@ -35,5 +35,54 @@
 	return self;
 }
 
+-(void)initJoystickAndButtons {
+    CGSize screenSize = [CCDirector sharedDirector].winSize;
+    CGRect joystickBaseDimensions = CGRectMake(0,0, 128.0f, 128.0f);
+    CGRect jumpButtonDimensions = CGRectMake(0,0, 64.0f, 64.0f);
+     CGRect attackButtonDimensions = CGRectMake(0,0, 64.0f, 64.0f);
+    CGPoint joystickBasePosition;
+    CGPoint jumpButtonPosition;
+    CGPoint attackButtonPosition;
+    if( UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad ) {
+        joystickBasePosition = ccp(screenSize.width*0.0625f, screenSize.height*0.052f);
+         jumpButtonPosition = ccp(screenSize.width*0.0946f, screenSize.height*0.052f);
+        attackButtonPosition = ccp(screenSize.width*0.0947f, screenSize.height*0.169f);
+    }else{
+        //This device is an iPhone or iPod Touch
+        joystickBasePosition = ccp(screenSize.width*0.07f, screenSize.height*0.11f);
+        jumpButtonPosition = ccp(screenSize.width*0.093f, screenSize.height*0.11f);
+        attackButtonPosition = ccp(screenSize.width*0.093f, screenSize.height*0.35f);
+    }
+    SneakyJoystickSkinnedBase *joyStickBase = [[[SneakyJoystickSkinnedBase alloc]init]autorelease];
+    joyStickBase.position = joystickBasePosition;
+    joyStickBase.backgroundSprite = [CCSprite spriteWithFile:(@"dpadDown.png")];
+    joyStickBase.thumbSprite = [CCSprite spriteWithFile:(@"joystickDown.png")];
+    joyStickBase.joystick = [[SneakyJoystick alloc]initWithRect:(joystickBaseDimensions)];
+    leftJoystick = [joyStickBase.joystick retain];
+    [self addChild:joyStickBase];
+    
+    SneakyButtonSkinnedBase *jumpButtonBase = [[[SneakyButtonSkinnedBase alloc]init]autorelease];
+    jumpButtonBase.position = jumpButtonPosition;
+    jumpButtonBase.defaultSprite = [CCSprite spriteWithFile:(@"jumpUp.png")];
+    jumpButtonBase.activatedSprite = [CCSprite spriteWithFile:(@"jumpDown.png")];
+    jumpButtonBase.pressSprite = [CCSprite spriteWithFile:(@"jumpDown.png")];
+    
+    jumpButtonBase.button = [[SneakyButton alloc]initWithRect:(jumpButtonDimensions)];
+    jumpButton = [jumpButtonBase.button retain];
+    jumpButton.isToggleable = NO;
+    [self addChild:jumpButtonBase];
+    
+
+    
+    
+    
+    
+    
+        
+    
+    
+    
+}
+
 
 @end
