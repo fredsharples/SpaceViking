@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 Fred Sharples. All rights reserved.
 //
 
-#import "CCLayer.h"
+#import "cocos2d.h"
+#import <Foundation/Foundation.h>
 
-@interface GameplayLayer : CCLayer
+
+
+@interface GameplayLayer : CCLayer{
+  CCSprite *vikingSprite;  
+}
 
 @end
