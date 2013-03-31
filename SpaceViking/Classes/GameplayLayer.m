@@ -53,6 +53,7 @@
         jumpButtonPosition = ccp(screenSize.width*0.093f, screenSize.height*0.11f);
         attackButtonPosition = ccp(screenSize.width*0.093f, screenSize.height*0.35f);
     }
+    //Init the Joystick
     SneakyJoystickSkinnedBase *joyStickBase = [[[SneakyJoystickSkinnedBase alloc]init]autorelease];
     joyStickBase.position = joystickBasePosition;
     joyStickBase.backgroundSprite = [CCSprite spriteWithFile:(@"dpadDown.png")];
@@ -61,26 +62,28 @@
     leftJoystick = [joyStickBase.joystick retain];
     [self addChild:joyStickBase];
     
+    //Init the Jump Button
     SneakyButtonSkinnedBase *jumpButtonBase = [[[SneakyButtonSkinnedBase alloc]init]autorelease];
     jumpButtonBase.position = jumpButtonPosition;
     jumpButtonBase.defaultSprite = [CCSprite spriteWithFile:(@"jumpUp.png")];
     jumpButtonBase.activatedSprite = [CCSprite spriteWithFile:(@"jumpDown.png")];
     jumpButtonBase.pressSprite = [CCSprite spriteWithFile:(@"jumpDown.png")];
-    
     jumpButtonBase.button = [[SneakyButton alloc]initWithRect:(jumpButtonDimensions)];
     jumpButton = [jumpButtonBase.button retain];
     jumpButton.isToggleable = NO;
     [self addChild:jumpButtonBase];
     
-
-    
-    
-    
-    
-    
-        
-    
-    
+    //Init the Attack Button
+    SneakyButtonSkinnedBase *attackButtonBase = [[[SneakyButtonSkinnedBase alloc]init]autorelease];
+    attackButtonBase.position = attackButtonPosition;
+    attackButtonBase.defaultSprite = [CCSprite spriteWithFile:(@"handUp.png")];
+    attackButtonBase.activatedSprite = [CCSprite spriteWithFile:(@"handDown.png")];
+    attackButtonBase.pressSprite = [CCSprite spriteWithFile:(@"handDown.png")];
+    attackButtonBase.button = [[SneakyButton alloc]initWithRect:(attackButtonDimensions)];
+    jumpButton = [attackButtonBase.button retain];
+    jumpButton.isToggleable = NO;
+    [self addChild:attackButtonBase];
+  
     
 }
 
