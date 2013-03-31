@@ -15,6 +15,7 @@
 
 
 
+
 @interface GameplayLayer : CCLayer{
   CCSprite *vikingSprite;
     SneakyJoystick *leftJoystick;

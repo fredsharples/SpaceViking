@@ -22,7 +22,8 @@
         [vikingSprite setPosition: CGPointMake(screenSize.width/2, screenSize.height*0.17f)];
         
         [self addChild: vikingSprite];
-
+        [self initJoystickAndButtons];
+        [self scheduleUpdate];
         
 		if( UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad ) {
 			
@@ -39,13 +40,13 @@
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     CGRect joystickBaseDimensions = CGRectMake(0,0, 128.0f, 128.0f);
     CGRect jumpButtonDimensions = CGRectMake(0,0, 64.0f, 64.0f);
-     CGRect attackButtonDimensions = CGRectMake(0,0, 64.0f, 64.0f);
+    CGRect attackButtonDimensions = CGRectMake(0,0, 64.0f, 64.0f);
     CGPoint joystickBasePosition;
     CGPoint jumpButtonPosition;
     CGPoint attackButtonPosition;
     if( UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad ) {
         joystickBasePosition = ccp(screenSize.width*0.0625f, screenSize.height*0.052f);
-         jumpButtonPosition = ccp(screenSize.width*0.0946f, screenSize.height*0.052f);
+        jumpButtonPosition = ccp(screenSize.width*0.0946f, screenSize.height*0.052f);
         attackButtonPosition = ccp(screenSize.width*0.0947f, screenSize.height*0.169f);
     }else{
         //This device is an iPhone or iPod Touch
@@ -83,9 +84,22 @@
     jumpButton = [attackButtonBase.button retain];
     jumpButton.isToggleable = NO;
     [self addChild:attackButtonBase];
-  
-    
 }
 
+-(void)applyJoystick:(SneakyJoystick *)aJoyStick toNode:(CCNode *)tempNode forTimeDelta:(float)deltaTime {
+    CGPoint scaledVelocity = ccpMult(aJoyStick.velocity, 1024.0f);
+    CGPoint newPosition = ccp (tempNode.position.x + scaledVelocity.x * deltaTime,tempNode.position.y + scaledVelocity.y * deltaTime);
+    [tempNode setPosition:newPosition];
+    if (jumpButton.active == YES){
+        CCLOG(@"Jump button pressed");
+    
+    }
+    if (attackButton.active == YES){
+        CCLOG(@"Jump button pressed");
+    }
+}
+-(void)update:(ccTime)deltaTime{
+    [self applyJoystick:leftJoystick toNode:vikingSprite forTimeDelta:deltaTime];
+}
 
 @end
